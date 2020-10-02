@@ -1,5 +1,6 @@
 package com.devJin.FMF.domain.posts;
 
+import com.devJin.FMF.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,7 @@ import javax.persistence.*;
 // 중요한 어노테이션일 수록 클래스에 붙혀서 쓴다.
  
 
-public class Posts {
+public class Posts extends BaseTimeEntity {
     @Id // 테이블의 primary key 필드를 나타냄
     @GeneratedValue(strategy = GenerationType.IDENTITY) // pk의 생성 규칙, GenerationType.IDENTITY 를 선언해야 auto_increment가 됩니다.
     private Long id;
