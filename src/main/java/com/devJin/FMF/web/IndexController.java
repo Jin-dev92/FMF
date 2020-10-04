@@ -1,12 +1,17 @@
-//package com.devJin.FMF.web;
-//
-//import org.springframework.stereotype.Controller;
-//import org.springframework.web.bind.annotation.GetMapping;
-//
-//@Controller
-//public class IndexController {
-//    @GetMapping("/")
-//    public String index(){
-//     return "index";
-//    }
-//}
+package com.devJin.FMF.web;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class IndexController {
+    @GetMapping("/")
+    public String index(){
+     return "index";
+    }
+    @GetMapping("/posts/save")
+    public String postsSave(){
+        return "posts-save"; // posts-save.mustache 호출
+    }
+
+}
