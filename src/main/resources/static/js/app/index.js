@@ -6,6 +6,7 @@ var main = {
         });
 
         $('#btn-update').on('click', function () {
+            console.log('aaaa');
             _this.update();
         });
 
@@ -40,7 +41,13 @@ var main = {
         };
 
         var id = $('#id').val();
-
+        /*
+        * REST API 에서 CRUD는 다음과 같이 HTTP METHOD 가 매핑됩니다.
+        * 생성 - POST
+        * 읽기 - GET
+        * 수정 - PUT
+        * 삭제 - DELETE
+        * */
         $.ajax({
             type: 'PUT',
             url: '/api/v1/posts/'+id,
@@ -71,5 +78,4 @@ var main = {
     }
 
 };
-
 main.init();

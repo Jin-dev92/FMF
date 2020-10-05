@@ -7,4 +7,26 @@
     </div>
 </div>
 
+<table class="table table-horizonal table-bordered">
+    <thead class="thead-strong">
+        <tr>
+            <th>게시글 번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>최종수정일</th>
+        </tr>
+    </thead>
+    <tbody id="tbody">
+    {{#posts}}
+    <!--posts 라는 List 를 for 문 돌림-->
+        <tr>
+            <td>{{id}}</td>
+    <!--posts라는 list 에서 뽑아온 객체 필드-->
+            <td><a href="/posts/update/{{id}}">{{title}}</a></td>
+            <td>{{author}}</td>
+            <td>{{modifiedDate}}</td>
+        </tr>
+    </tbody>
+    {{/posts}}
+</table>
 {{>layout/footer}}
