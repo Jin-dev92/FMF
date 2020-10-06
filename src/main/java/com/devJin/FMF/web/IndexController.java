@@ -15,19 +15,35 @@ public class IndexController {
     private final PostsService postsService;
 
     @GetMapping("/")
-    public String index(Model model){ // Model 서버 템플릿 엔진에서 사용할 수 있는 객체를 저장할 수 있음.
-        model.addAttribute("posts",postsService.findAllDesc());
-     return "index";
-    }
-    @GetMapping("/posts/save")
-    public String postsSave(){
-        return "posts-save"; // posts-save.mustache 호출
+    public String index(){
+        return "index";
     }
 
-    @GetMapping("/posts/update/{id}")
-    public String postsUpdate(@PathVariable Long id , Model model){
-        PostsResponseDto dto = postsService.findById(id);
-        model.addAttribute("post",dto);
-        return "posts-update";
+    @GetMapping("login")
+    public String login(){
+        boolean flag = true;
+        String direction = "";
+        if (flag) { // 로그인이 됬다면
+            direction = "portfolio";
+        }else{
+            direction = "index";
+        }
+        return direction;
     }
+//    @GetMapping("/")
+//    public String index(Model model){ // Model 서버 템플릿 엔진에서 사용할 수 있는 객체를 저장할 수 있음.
+//        model.addAttribute("posts",postsService.findAllDesc());
+//     return "index";
+//    }
+//    @GetMapping("/posts/save")
+//    public String postsSave(){
+//        return "posts-save"; // posts-save.mustache 호출
+//    }
+//
+//    @GetMapping("/posts/update/{id}")
+//    public String postsUpdate(@PathVariable Long id , Model model){
+//        PostsResponseDto dto = postsService.findById(id);
+//        model.addAttribute("post",dto);
+//        return "posts-update";
+//    }
 }

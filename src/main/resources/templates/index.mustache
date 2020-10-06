@@ -1,32 +1,10 @@
 {{>layout/header}}
-
-<h1>스프링 부트로 시작하는 웹 서비스 ver.2</h1>
-<div class="row">
-    <div class="col-md-6">
-        <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
-    </div>
+<div class="login-dark">
+    <form method="post">
+        <h2 class="sr-only">Login Form</h2>
+        <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+        <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
+        <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+    </form>
 </div>
-
-<table class="table table-horizonal table-bordered">
-    <thead class="thead-strong">
-        <tr>
-            <th>게시글 번호</th>
-            <th>제목</th>
-            <th>작성자</th>
-            <th>최종수정일</th>
-        </tr>
-    </thead>
-    <tbody id="tbody">
-    {{#posts}}
-    <!--posts 라는 List 를 for 문 돌림-->
-        <tr>
-            <td>{{id}}</td>
-    <!--posts라는 list 에서 뽑아온 객체 필드-->
-            <td><a href="/posts/update/{{id}}">{{title}}</a></td>
-            <td>{{author}}</td>
-            <td>{{modifiedDate}}</td>
-        </tr>
-    </tbody>
-    {{/posts}}
-</table>
 {{>layout/footer}}
