@@ -34,6 +34,8 @@ dependencies {
 
 //	compile('org.springframework.boot:spring-boot-starter-oauth2-client')
 	compile('org.springframework.session:spring-session-jdbc')
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
 
 	compile("org.mariadb.jdbc:mariadb-java-client")
 
