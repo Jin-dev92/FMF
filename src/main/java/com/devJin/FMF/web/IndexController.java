@@ -21,12 +21,12 @@ public class IndexController {
 
     @GetMapping("login")
     public String login(){
-        boolean flag = true;
+        boolean flag = true; // 로그인 프로세스 후 return bool값
         String direction = "";
         if (flag) { // 로그인이 됬다면
             direction = "portfolio";
         }else{
-            direction = "index";
+            direction = "index"; // 실패 프로세스
         }
         return direction;
     }

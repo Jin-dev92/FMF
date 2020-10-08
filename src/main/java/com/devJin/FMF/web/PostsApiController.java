@@ -27,6 +27,7 @@ public class PostsApiController {
     public PostsResponseDto findById(@PathVariable Long id){
         return postsService.findById(id);
     }
+    //@PathVariable 은 바로 위 Mapping 어노테이션에서 {}값을 가져온다
 
     @DeleteMapping("/api/v1/posts/{id}")
     public Long delete(@PathVariable Long id){
