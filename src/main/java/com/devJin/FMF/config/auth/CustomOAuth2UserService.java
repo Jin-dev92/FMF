@@ -4,6 +4,7 @@ import com.devJin.FMF.config.auth.dto.OAuthAttributes;
 import com.devJin.FMF.config.auth.dto.SessionUser;
 import com.devJin.FMF.domain.user.User;
 import com.devJin.FMF.domain.user.UserRepository;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -47,8 +48,8 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
         * */
         return new DefaultOAuth2User(
                 Collections.singleton(new SimpleGrantedAuthority(user.getRoleKey())),
-                attributes.getAttributes(),
-                attributes.getNameAttributeKey()
+                                                                attributes.getAttributes(),
+                                                                attributes.getNameAttributeKey()
         );
     }
 
